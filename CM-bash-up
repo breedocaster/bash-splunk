@@ -13,6 +13,6 @@ sudo firewall-cmd --zone=public --permanent --add-port 8000/tcp
 sudo firewall-cmd --zone=public --permanent --add-port 8089/tcp
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-all
-sudo systemctl start Splunkd.service
 ./splunk edit cluster-config -mode manager -replication_factor 2 -search_factor 2 -secret changeme
+sudo systemctl start Splunkd.service
 sudo reboot
