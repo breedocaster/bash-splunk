@@ -10,10 +10,10 @@ sudo wget -O splunk-8.2.2-87344edfcdb4-Linux-x86_64.tgz 'https://d7wz6hmoaavd0.c
 sudo chown -R splunk:splunk /opt/splunk
 cd splunk/bin && ./splunk enable boot-start -user splunk -systemd-managed 1 --accept-license
 sudo systemctl start Splunkd.service
+sleep 1m
 ./splunk edit cluster-config -mode manager -replication_factor 2 -search_factor 2 -secret changeme
 sudo firewall-cmd --zone=public --permanent --add-port 8000/tcp
 sudo firewall-cmd --zone=public --permanent --add-port 8089/tcp
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-all
-sleep 1m
 sudo reboot
