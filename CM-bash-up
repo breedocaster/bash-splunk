@@ -12,7 +12,7 @@ sudo chown -R splunk:splunk /opt/splunk
 cd splunk/bin && ./splunk enable boot-start -user splunk -systemd-managed 1 --accept-license
 sudo systemctl start Splunkd.service
 sleep 1m
-./splunk edit cluster-config -mode manager -replication_factor 2 -search_factor 2 -secret changeme
+./splunk edit cluster-config -mode manager -replication_factor 2 -search_factor 2 -secret clusterbuster1234
 sudo firewall-cmd --zone=public --permanent --add-port 8000/tcp
 sudo firewall-cmd --zone=public --permanent --add-port 8089/tcp
 sudo firewall-cmd --reload
