@@ -4,6 +4,7 @@ nmcli con mod ens192 ipv4.addresses 192.168.1.112/24
 nmcli con mod ens192 ipv4.gateway 192.168.1.254
 nmcli con mod ens192 ipv4.method manual
 nmcli con mod ens192 ipv4.dns "8.8.8.8"
+sudo nmcli general hostname CM
 nmcli con up ens192
 cd /opt
 sudo wget -O splunk-8.2.2-87344edfcdb4-Linux-x86_64.tgz 'https://d7wz6hmoaavd0.cloudfront.net/products/splunk/releases/8.2.2/linux/splunk-8.2.2-87344edfcdb4-Linux-x86_64.tgz' && sudo tar -xf splunk-8.2.2-87344edfcdb4-Linux-x86_64.tgz
