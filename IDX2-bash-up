@@ -13,7 +13,7 @@ cd splunk/bin && ./splunk enable boot-start -user splunk -systemd-managed 1 --ac
 sudo systemctl start Splunkd.service
 sleep 1m
 ./splunk enable listen 9997
-./splunk edit cluster-config -mode slave -master_uri https://192.168.1.112:8089 -secret changeme -replication_port 9100
+./splunk edit cluster-config -mode slave -master_uri https://192.168.1.112:8089 -secret clusterbuster1234 -replication_port 9100
 sudo firewall-cmd --zone=public --permanent --add-port 8000/tcp
 sudo firewall-cmd --zone=public --permanent --add-port 8089/tcp
 sudo firewall-cmd --reload
